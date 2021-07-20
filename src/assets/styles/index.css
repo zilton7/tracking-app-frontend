@@ -60,8 +60,10 @@ body {
 
 .measurements {
   height: 82%;
-  display: flex;
   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 8rem);
 }
 
 .measurement-item {
@@ -69,20 +71,20 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   background-color: white;
 }
 
 .measurement-item img {
   padding-right: 1rem;
-  width: 3rem;
+  width: 3.5rem;
   filter: invert(68%) sepia(34%) saturate(764%) hue-rotate(169deg)
     brightness(94%) contrast(91%);
 }
 
 .measurement-item div p {
   color: rgb(146, 146, 146);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .measurement-item div .measure {

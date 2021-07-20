@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MeasurementItem from "./MeasurementItem";
 import loadMeasurements from "../actions/measurementsAction";
 
@@ -12,23 +12,25 @@ import legLeft from "../assets/images/leg-left.png";
 import legRight from "../assets/images/leg-right.png";
 
 const Measurements = () => {
+  // Fetch measurements data
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadMeasurements());
   }, [dispatch]);
 
+  // Put images to array
+  const images = [bicepLeft, bicepRight, waist, hip, legLeft, legRight];
+  // Load measurements from state
+  let measurements = useSelector((state) => state.measurements.measurements);
+
   return (
     <div className="measurements">
-      <div className="measurements-left">
-        <MeasurementItem image={bicepLeft} name="Left Bicep" measure="50.6" />
-        <MeasurementItem image={waist} name="Waist" measure="50.6" />
-        <MeasurementItem image={legLeft} name="Left Leg" measure="50.6" />
-      </div>
-      <div className="measurements-right">
-        <MeasurementItem image={bicepRight} name="Right Bicep" measure="50.6" />
-        <MeasurementItem image={hip} name="Hip" measure="50.6" />
-        <MeasurementItem image={legRight} name="Right Leg" measure="50.6" />
-      </div>
+      {measurements.map((measurement) => (
+        <MeasurementItem
+          image={images[measurement.id - 1]}
+          name={measurement.name}
+        />
+      ))}
     </div>
   );
 };
