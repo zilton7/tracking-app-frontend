@@ -11,11 +11,11 @@ const Nav = () => (
         <i className="fas fa-chart-line"></i>
         <p>Tracker</p>
       </Link>
-      <Link className="button-wrapper">
+      <Link to="/" className="button-wrapper">
         <i className="fas fa-chart-pie"></i>
         <p>Progress</p>
       </Link>
-      <Link className="button-wrapper">
+      <Link to="/" className="button-wrapper">
         <i className="fas fa-ellipsis-h"></i>
         <p>More</p>
       </Link>

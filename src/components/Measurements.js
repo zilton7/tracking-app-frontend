@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 import MeasurementItem from "./MeasurementItem";
+import loadMeasurements from "../actions/measurementsAction";
+
 import bicepLeft from "../assets/images/bicep-left.png";
 import bicepRight from "../assets/images/bicep-right.png";
 import waist from "../assets/images/waist.png";
@@ -9,17 +12,10 @@ import legLeft from "../assets/images/leg-left.png";
 import legRight from "../assets/images/leg-right.png";
 
 const Measurements = () => {
-  function checkLoginStatus() {
-    axios
-      .get("https://tracking-app-be-zil.herokuapp.com/api/v1/measurements")
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => error);
-  }
+  const dispatch = useDispatch();
   useEffect(() => {
-    checkLoginStatus();
-  });
+    dispatch(loadMeasurements());
+  }, [dispatch]);
 
   return (
     <div className="measurements">
