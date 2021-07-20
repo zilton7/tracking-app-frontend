@@ -98,6 +98,19 @@ body {
   cursor: pointer;
 }
 
+.progress-container {
+  height: 82%;
+  overflow: auto;
+}
+
+.progress-item {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  margin: 1rem 0;
+}
+
 .add-measure {
   height: 82%;
 }
