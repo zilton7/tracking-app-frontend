@@ -92,6 +92,7 @@ body {
 
 .measurement-item:hover {
   outline: solid 0.1rem var(--main);
+  cursor: pointer;
 }
 
 .bottom-buttons {

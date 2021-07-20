@@ -1,10 +1,10 @@
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+import Measurements from "./components/Measurements";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Measurements />
       <Nav />
     </div>
   );
