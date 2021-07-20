@@ -16,14 +16,14 @@ function Router() {
   </div>;
   return (
     <div className="App">
-      <Heading />
       <BrowserRouter>
+        <Heading />
         <Switch>
           <Route exact path="/add" component={AddMeasure} />
           <Route exact path="/tracker" component={Measurements} />
         </Switch>
+        <Nav />
       </BrowserRouter>
-      <Nav />
     </div>
   );
 }

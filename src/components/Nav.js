@@ -1,28 +1,24 @@
+import { Link } from "react-router-dom";
+
 const Nav = () => (
   <nav>
     <div className="bottom-buttons">
-      <div
-        className="button-wrapper"
-        onClick={() => (window.location = "/add")}
-      >
+      <Link to="/add" className="button-wrapper">
         <i className="far fa-plus-square"></i>
         <p>Add measure</p>
-      </div>
-      <div
-        className="button-wrapper"
-        onClick={() => (window.location = "/tracker")}
-      >
+      </Link>
+      <Link to="/tracker" className="button-wrapper">
         <i className="fas fa-chart-line"></i>
         <p>Tracker</p>
-      </div>
-      <div className="button-wrapper">
+      </Link>
+      <Link className="button-wrapper">
         <i className="fas fa-chart-pie"></i>
         <p>Progress</p>
-      </div>
-      <div className="button-wrapper">
+      </Link>
+      <Link className="button-wrapper">
         <i className="fas fa-ellipsis-h"></i>
         <p>More</p>
-      </div>
+      </Link>
     </div>
   </nav>
 );
