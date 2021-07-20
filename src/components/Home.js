@@ -4,7 +4,7 @@ import axios from "axios";
 const Home = () => {
   function checkLoginStatus() {
     axios
-      .get(`https://tracking-app-be-zil.herokuapp.com/api/v1/measurements/1`)
+      .get("https://tracking-app-be-zil.herokuapp.com/api/v1/measurements")
       .then((response) => {
         console.log(response.data);
       })
