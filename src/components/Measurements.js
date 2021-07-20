@@ -16,7 +16,12 @@ const Measurements = () => {
   return (
     <div className="measurements">
       {measurements.map((measurement) => (
-        <MeasurementItem image={measurement.image} name={measurement.name} />
+        <MeasurementItem
+          key={measurement.id}
+          id={measurement.id}
+          image={measurement.image}
+          name={measurement.name}
+        />
       ))}
     </div>
   );

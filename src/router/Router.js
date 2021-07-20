@@ -7,6 +7,7 @@ import Nav from "../components/Nav";
 import Heading from "../components/Heading";
 import Home from "../components/Home";
 import AddMeasure from "../components/AddMeasure";
+import Progress from "../components/Progress";
 
 function Router() {
   <div className="App">
@@ -21,6 +22,7 @@ function Router() {
         <Switch>
           <Route exact path="/add" component={AddMeasure} />
           <Route exact path="/tracker" component={Measurements} />
+          <Route path="/progress/:measurementId" component={Progress} />
         </Switch>
         <Nav />
       </BrowserRouter>
