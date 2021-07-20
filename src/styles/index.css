@@ -59,7 +59,7 @@ body {
 }
 
 .measurements {
-  height: 50%;
+  height: 82%;
   display: flex;
   justify-content: center;
 }
@@ -103,6 +103,7 @@ body {
   color: whitesmoke;
   height: 10%;
   width: 100%;
+  padding: 0.25rem 0;
 }
 
 .bottom-buttons p {
