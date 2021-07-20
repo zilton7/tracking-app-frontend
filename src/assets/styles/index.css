@@ -95,6 +95,10 @@ body {
   cursor: pointer;
 }
 
+.add-measure {
+  height: 82%;
+}
+
 .bottom-buttons {
   display: flex;
   justify-content: space-evenly;

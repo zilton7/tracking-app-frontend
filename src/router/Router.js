@@ -4,6 +4,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import Measurements from "../components/Measurements";
 import Nav from "../components/Nav";
+import Heading from "../components/Heading";
+import Home from "../components/Home";
+import AddMeasure from "../components/AddMeasure";
 
 function Router() {
   <div className="App">
@@ -13,9 +16,10 @@ function Router() {
   </div>;
   return (
     <div className="App">
-      <div className="heading">Tracking App</div>
+      <Heading />
       <BrowserRouter>
         <Switch>
+          <Route exact path="/add" component={AddMeasure} />
           <Route exact path="/tracker" component={Measurements} />
         </Switch>
       </BrowserRouter>

@@ -1,11 +1,17 @@
 const Nav = () => (
   <nav>
     <div className="bottom-buttons">
-      <div className="button-wrapper">
+      <div
+        className="button-wrapper"
+        onClick={() => (window.location = "/add")}
+      >
         <i className="far fa-plus-square"></i>
         <p>Add measure</p>
       </div>
-      <div className="button-wrapper">
+      <div
+        className="button-wrapper"
+        onClick={() => (window.location = "/tracker")}
+      >
         <i className="fas fa-chart-line"></i>
         <p>Tracker</p>
       </div>
