@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import MeasurementItem from "./MeasurementItem";
-import bicepLeft from "../images/bicep-left.png";
-import bicepRight from "../images/bicep-right.png";
-import waist from "../images/waist.png";
-import hip from "../images/hip.png";
-import legLeft from "../images/leg-left.png";
-import legRight from "../images/leg-right.png";
+import bicepLeft from "../assets/images/bicep-left.png";
+import bicepRight from "../assets/images/bicep-right.png";
+import waist from "../assets/images/waist.png";
+import hip from "../assets/images/hip.png";
+import legLeft from "../assets/images/leg-left.png";
+import legRight from "../assets/images/leg-right.png";
 
 const Measurements = () => {
   function checkLoginStatus() {
