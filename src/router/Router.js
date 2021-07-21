@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-// import { useSelector } from "react-redux";
 import axios from "axios";
 import Measurements from "../components/Measurements";
 import Nav from "../components/Nav";
@@ -8,9 +7,10 @@ import Heading from "../components/Heading";
 import Home from "../components/Home";
 import AddMeasure from "../components/AddMeasure";
 import Progress from "../components/Progress";
+import Login from "../components/Login";
 
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import loadMeasurements from "../actions/measurementsAction";
 
 function Router() {
@@ -19,8 +19,10 @@ function Router() {
   useEffect(() => {
     dispatch(loadMeasurements());
   }, [dispatch]);
+
   return (
     <div className="App">
+      <Login />
       <BrowserRouter>
         <Heading />
         <Switch>
