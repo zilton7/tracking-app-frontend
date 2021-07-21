@@ -10,7 +10,7 @@ import Progress from "../components/Progress";
 import Login from "../components/Login";
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import loadMeasurements from "../actions/measurementsAction";
 
 function Router() {
@@ -20,18 +20,25 @@ function Router() {
     dispatch(loadMeasurements());
   }, [dispatch]);
 
+  // Load user data from state
+  let user = useSelector((state) => state.user);
+
   return (
     <div className="App">
-      <Login />
-      <BrowserRouter>
-        <Heading />
-        <Switch>
-          <Route exact path="/add" component={AddMeasure} />
-          <Route exact path="/tracker" component={Measurements} />
-          <Route path="/progress/:measurementId" component={Progress} />
-        </Switch>
-        <Nav />
-      </BrowserRouter>
+      {user.loggedIn ? (
+        <BrowserRouter>
+          <Heading />
+          <Switch>
+            <Route path="/" component={Measurements} />
+            <Route exact path="/add" component={AddMeasure} />
+            <Route exact path="/tracker" component={Measurements} />
+            <Route path="/progress/:measurementId" component={Progress} />
+          </Switch>
+          <Nav />
+        </BrowserRouter>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }

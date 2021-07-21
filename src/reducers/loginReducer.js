@@ -9,7 +9,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         username: action.payload.username,
-        loggedIn: !action.payload.loggedIn,
+        loggedIn: true,
       };
     case "LOGOUT":
       return {
