@@ -29,7 +29,7 @@ function Router() {
         <BrowserRouter>
           <Heading />
           <Switch>
-            <Route path="/" component={Measurements} />
+            <Route exact path="/" component={Measurements} />
             <Route exact path="/add" component={AddMeasure} />
             <Route exact path="/tracker" component={Measurements} />
             <Route path="/progress/:measurementId" component={Progress} />
