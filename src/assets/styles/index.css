@@ -103,6 +103,11 @@ body {
   overflow: auto;
 }
 
+.progress-container h3 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
 .progress-item {
   padding: 1rem;
   display: flex;
@@ -113,6 +118,44 @@ body {
 
 .add-measure {
   height: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-measure .container {
+  width: 100%;
+  background: white;
+  padding: 2rem 0;
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-measure select,
+.add-measure input,
+.add-measure button {
+  height: 3rem;
+  font-size: 1.25rem;
+  margin: 0.5rem 0.5rem;
+}
+
+.add-measure select {
+  padding: 0.25rem;
+  width: 50%;
+}
+
+.add-measure input {
+  padding: 0.25rem;
+  width: 50%;
+}
+
+.add-measure button {
+  color: white;
+  background: var(--second);
+  width: 95%;
 }
 
 .bottom-buttons {

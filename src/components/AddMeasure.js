@@ -51,24 +51,28 @@ const AddMeasure = () => {
 
   return (
     <div className="add-measure">
-      <select
-        name="select-measurements"
-        id="select-measurements"
-        onChange={handleSelectChange}
-      >
-        {measurements.map((measurement) => (
-          <option value={measurement.id}>{measurement.name}</option>
-        ))}
-      </select>
-      <input
-        id="measurement-input"
-        type="number"
-        step="0.01"
-        min="0"
-        placeholder="0.01"
-        onChange={handleInputChange}
-      />
-      <button onClick={handleClick}>Add</button>
+      <div className="container">
+        <div className="select-wrapper">
+          <select
+            name="select-measurements"
+            id="select-measurements"
+            onChange={handleSelectChange}
+          >
+            {measurements.map((measurement) => (
+              <option value={measurement.id}>{measurement.name}</option>
+            ))}
+          </select>
+          <input
+            id="measurement-input"
+            type="number"
+            step="0.01"
+            min="0"
+            placeholder="0.01 cm"
+            onChange={handleInputChange}
+          />
+        </div>
+        <button onClick={handleClick}>Add</button>
+      </div>
     </div>
   );
 };
