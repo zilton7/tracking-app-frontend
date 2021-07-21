@@ -9,12 +9,16 @@ import Home from "../components/Home";
 import AddMeasure from "../components/AddMeasure";
 import Progress from "../components/Progress";
 
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import loadMeasurements from "../actions/measurementsAction";
+
 function Router() {
-  <div className="App">
-    {/* <div className="heading">Tracking App</div>
-    <Measurements />
-    <Nav /> */}
-  </div>;
+  // Fetch measurements data
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadMeasurements());
+  }, [dispatch]);
   return (
     <div className="App">
       <BrowserRouter>
