@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import logout from "../actions/logoutAction";
+import { useHistory } from "react-router-dom";
 
 const Nav = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(logout());
-    window.location = "/";
+    history.push("/");
   };
 
   return (

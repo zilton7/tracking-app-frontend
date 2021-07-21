@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 const AddMeasure = () => {
@@ -12,6 +13,8 @@ const AddMeasure = () => {
   });
   // Load measurements from state
   let measurements = useSelector((state) => state.measurements.measurements);
+
+  const history = useHistory();
 
   const handleSelectChange = (e) => {
     setMeasurementId({
@@ -42,7 +45,7 @@ const AddMeasure = () => {
       )
       .then(() => {
         document.getElementById("measurement-input").value = "";
-        window.location = `/progress/${measurementId.id}`;
+        history.push(`/progress/${measurementId.id}`);
       });
   };
 
