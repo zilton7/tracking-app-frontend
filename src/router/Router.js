@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import axios from "axios";
 import Measurements from "../containers/Measurements";
 import Progress from "../containers/Progress";
 import Nav from "../components/Nav";
 import Heading from "../components/Heading";
-import Home from "../components/Home";
 import AddMeasure from "../components/AddMeasure";
 import Login from "../components/Login";
 
