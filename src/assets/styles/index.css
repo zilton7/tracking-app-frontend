@@ -239,8 +239,6 @@ button:hover {
   }
 
   .measurements {
-    height: 82%;
-    justify-content: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 16rem);
@@ -282,6 +280,12 @@ button:hover {
 @media (min-width: 992px) {
   button {
     width: 46%;
+  }
+
+  .measurements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 14rem);
   }
 
   .measurement-item div p {
