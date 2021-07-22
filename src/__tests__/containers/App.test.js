@@ -1,23 +1,11 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { render, cleanup, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
-import Router from "../../router/Router";
 import store from "../../store/index";
-import Login from "../../components/Login";
-import Heading from "../../components/Heading";
-import Measurements from "../../containers/Measurements";
-import AddMeasure from "../../components/AddMeasure";
-import Progress from "../../containers/Progress";
-import Nav from "../../components/Nav";
 import App from "../../containers/App";
 
 afterEach(cleanup);
-
-const user = {
-  loggedIn: true,
-};
 
 it("Takes website's snapshot", () => {
   const { asFragment } = render(
@@ -44,14 +32,22 @@ it("Displays app's title", () => {
   expect(element).toBeInTheDocument();
 });
 
-// it("Displays nav bar", () => {
-//   render(
-//     <Provider store={store}>
-//       <BrowserRouter>
-//         <App />
-//       </BrowserRouter>
-//     </Provider>
-//   );
-//   const element = screen.getByPlaceholderText(/Search for Meal/i);
-//   expect(element).toBeInTheDocument();
-// });
+it("Displays username field", () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+  const element = screen.getByPlaceholderText(/Enter Your Name/i);
+  expect(element).toBeInTheDocument();
+});
+
+it("Displays login button", () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+  const element = screen.getByText(/Login/i);
+  expect(element).toBeInTheDocument();
+});
