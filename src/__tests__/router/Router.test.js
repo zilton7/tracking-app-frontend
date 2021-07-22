@@ -57,19 +57,32 @@ it("Takes website's snapshot", () => {
   ).toMatchSnapshot();
 });
 
-// it("Displays website's title", () => {
-//   render(
-//     <Provider store={store}>
-//       <BrowserRouter>
-//         <App />
-//       </BrowserRouter>
-//     </Provider>
-//   );
-//   const element = screen.getByText(/Veggie Meal Catalog/i);
-//   expect(element).toBeInTheDocument();
-// });
+it("Displays app's title", () => {
+  render(
+    <Provider store={store}>
+      <div className="App">
+        {user.loggedIn ? (
+          <BrowserRouter>
+            <Heading />
+            <Switch>
+              <Route exact path="/" component={Measurements} />
+              <Route exact path="/add" component={AddMeasure} />
+              <Route exact path="/tracker" component={Measurements} />
+              <Route path="/progress/:measurementId" component={Progress} />
+            </Switch>
+            <Nav />
+          </BrowserRouter>
+        ) : (
+          <Login />
+        )}
+      </div>
+    </Provider>
+  );
+  const element = screen.getByText(/Tracking App/i);
+  expect(element).toBeInTheDocument();
+});
 
-// it("Displays search bar", () => {
+// it("Displays nav bar", () => {
 //   render(
 //     <Provider store={store}>
 //       <BrowserRouter>
