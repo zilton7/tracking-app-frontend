@@ -2,42 +2,20 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Measurements from "../containers/Measurements";
 import Progress from "../containers/Progress";
-import Nav from "../components/Nav";
-import Heading from "../components/Heading";
 import AddMeasure from "../components/AddMeasure";
-import Login from "../components/Login";
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import loadMeasurements from "../actions/measurementsAction";
+import Nav from "../components/Nav";
 
 function Router() {
-  // Fetch measurements data
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadMeasurements());
-  }, [dispatch]);
-
-  // Load user data from state
-  let user = useSelector((state) => state.user);
-
   return (
-    <div className="App">
-      {user.loggedIn ? (
-        <BrowserRouter>
-          <Heading />
-          <Switch>
-            <Route exact path="/" component={Measurements} />
-            <Route exact path="/add" component={AddMeasure} />
-            <Route exact path="/tracker" component={Measurements} />
-            <Route path="/progress/:measurementId" component={Progress} />
-          </Switch>
-          <Nav />
-        </BrowserRouter>
-      ) : (
-        <Login />
-      )}
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Measurements} />
+        <Route exact path="/add" component={AddMeasure} />
+        <Route exact path="/tracker" component={Measurements} />
+        <Route path="/progress/:measurementId" component={Progress} />
+      </Switch>
+      <Nav />
+    </BrowserRouter>
   );
 }
 
