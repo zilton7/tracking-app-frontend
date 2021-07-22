@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const AddMeasure = () => {
   const [measurementId, setMeasurementId] = useState({
@@ -12,7 +12,7 @@ const AddMeasure = () => {
     data: 0.01,
   });
   // Load measurements from state
-  let measurements = useSelector((state) => state.measurements.measurements);
+  const measurements = useSelector((state) => state.measurements.measurements);
 
   const history = useHistory();
 
@@ -40,11 +40,11 @@ const AddMeasure = () => {
     };
     axios
       .post(
-        "https://tracking-app-be-zil.herokuapp.com/api/v1/measurements",
-        payload
+        'https://tracking-app-be-zil.herokuapp.com/api/v1/measurements',
+        payload,
       )
       .then(() => {
-        document.getElementById("measurement-input").value = "";
+        document.getElementById('measurement-input').value = '';
         history.push(`/progress/${measurementId.id}`);
       });
   };
@@ -59,7 +59,9 @@ const AddMeasure = () => {
             onChange={handleSelectChange}
           >
             {measurements.map((measurement) => (
-              <option value={measurement.id}>{measurement.name}</option>
+              <option key={measurement.id} value={measurement.id}>
+                {measurement.name}
+              </option>
             ))}
           </select>
           <input
@@ -71,7 +73,9 @@ const AddMeasure = () => {
             onChange={handleInputChange}
           />
         </div>
-        <button onClick={handleClick}>Add</button>
+        <button type="submit" onClick={handleClick}>
+          Add
+        </button>
       </div>
     </div>
   );

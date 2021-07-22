@@ -1,8 +1,8 @@
 const login = (username) => async (dispatch) => {
   dispatch({
-    type: "LOGIN",
+    type: 'LOGIN',
     payload: {
-      username: username,
+      username,
       loggedIn: true,
     },
   });

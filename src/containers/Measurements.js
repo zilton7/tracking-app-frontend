@@ -1,10 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import MeasurementItem from "../components/MeasurementItem";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import MeasurementItem from '../components/MeasurementItem';
 
 const Measurements = () => {
   // Load measurements from state
-  let measurements = useSelector((state) => state.measurements.measurements);
+  const measurements = useSelector((state) => state.measurements.measurements);
 
   return (
     <div className="measurements">

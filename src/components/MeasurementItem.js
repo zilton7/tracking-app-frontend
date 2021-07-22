@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const MeasurementItem = ({ id, image, name }) => {
-  return (
-    <Link to={`/progress/${id}`} className="measurement-item">
-      <img src={image} />
-      <div>
-        <p className="name">{name}</p>
-      </div>
-    </Link>
-  );
+const MeasurementItem = ({ id, image, name }) => (
+  <Link to={`/progress/${id}`} className="measurement-item">
+    <img alt="Measurement Item" src={image} />
+    <div>
+      <p className="name">{name}</p>
+    </div>
+  </Link>
+);
+
+MeasurementItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default MeasurementItem;

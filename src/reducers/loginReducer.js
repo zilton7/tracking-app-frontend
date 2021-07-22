@@ -5,13 +5,13 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOGIN":
+    case 'LOGIN':
       return {
         ...state,
         username: action.payload.username,
         loggedIn: true,
       };
-    case "LOGOUT":
+    case 'LOGOUT':
       return {
         ...state,
         username: null,

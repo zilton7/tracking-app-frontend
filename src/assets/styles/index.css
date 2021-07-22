@@ -57,6 +57,10 @@ body {
   padding: 1rem;
 }
 
+.button-wrapper i {
+  font-size: 1rem;
+}
+
 .date-selector i:hover {
   cursor: pointer;
 }
@@ -81,13 +85,25 @@ body {
 
 .measurement-item:hover {
   scale: 0.95;
+  outline: solid 0.1rem var(--main);
+  cursor: pointer;
 }
 
 .measurement-item img {
   padding-right: 1rem;
   width: 3.5rem;
-  filter: invert(68%) sepia(34%) saturate(764%) hue-rotate(169deg)
+  filter:
+    invert(68%) sepia(34%) saturate(764%) hue-rotate(169deg)
     brightness(94%) contrast(91%);
+}
+
+.progress-item p {
+  font-size: 1rem;
+}
+
+.bottom-buttons p {
+  font-size: 0.7rem;
+  padding-top: 0.25rem;
 }
 
 .measurement-item div p {
@@ -98,11 +114,6 @@ body {
 .measurement-item div .measure {
   color: rgb(0, 0, 0);
   font-size: 1rem;
-}
-
-.measurement-item:hover {
-  outline: solid 0.1rem var(--main);
-  cursor: pointer;
 }
 
 .progress-container {
@@ -122,10 +133,6 @@ body {
   align-items: center;
   background: white;
   margin: 1rem 0;
-}
-
-.progress-item p {
-  font-size: 1rem;
 }
 
 .add-measure,
@@ -197,11 +204,6 @@ button:hover {
   padding: 0.25rem 0;
 }
 
-.bottom-buttons p {
-  font-size: 0.7rem;
-  padding-top: 0.25rem;
-}
-
 .button-wrapper {
   color: white;
   text-decoration: none;
@@ -212,10 +214,6 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.button-wrapper i {
-  font-size: 1rem;
 }
 
 .button-wrapper:hover {
@@ -248,17 +246,21 @@ button:hover {
     width: 5rem;
   }
 
+  .bottom-buttons p {
+    font-size: 1.4rem;
+    padding-top: 0.25rem;
+  }
+
+  .progress-item p {
+    font-size: 1.5rem;
+  }
+
   .measurement-item div p {
     font-size: 1.5rem;
   }
 
   .button-wrapper i {
     font-size: 2rem;
-  }
-
-  .bottom-buttons p {
-    font-size: 1.4rem;
-    padding-top: 0.25rem;
   }
 
   .progress-item {
@@ -268,10 +270,6 @@ button:hover {
     justify-content: space-between;
     background: white;
     margin: 1rem 0;
-  }
-
-  .progress-item p {
-    font-size: 1.5rem;
   }
 }
 

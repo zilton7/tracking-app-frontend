@@ -1,6 +1,6 @@
 const logout = () => async (dispatch) => {
   dispatch({
-    type: "LOGOUT",
+    type: 'LOGOUT',
   });
 };
 export default logout;

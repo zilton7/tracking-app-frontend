@@ -1,9 +1,9 @@
-import Router from "../router/Router";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import loadMeasurements from "../actions/measurementsAction";
-import Heading from "../components/Heading";
-import Login from "../components/Login";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Router from '../router/Router';
+import loadMeasurements from '../actions/measurementsAction';
+import Heading from '../components/Heading';
+import Login from '../components/Login';
 
 const App = () => {
   // Fetch measurements data
@@ -13,7 +13,7 @@ const App = () => {
   }, [dispatch]);
 
   // Load user data from state
-  let user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   let app = <Login />;
   if (user.loggedIn) {

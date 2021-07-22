@@ -1,13 +1,12 @@
-import React from "react";
-import { render, cleanup, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import ProgressItem from "../../components/ProgressItem";
-import store from "../../store";
+import React from 'react';
+import { render, cleanup, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import ProgressItem from '../../components/ProgressItem';
+import store from '../../store';
 
 afterEach(cleanup);
 
-it("displays ProgressItem", () => {
+it('displays ProgressItem', () => {
   render(
     <Provider store={store}>
       <ProgressItem
@@ -16,7 +15,7 @@ it("displays ProgressItem", () => {
         data="23.6"
         key="005784"
       />
-    </Provider>
+    </Provider>,
   );
-  expect(screen.getByText("July 21, 2021")).toBeTruthy();
+  expect(screen.getByText('July 21, 2021')).toBeTruthy();
 });
