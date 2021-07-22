@@ -24,7 +24,7 @@ body {
 
 .App {
   height: 100vh;
-  width: 33vw;
+  width: 100vw;
   background: rgb(243, 243, 243);
   background-position: center;
   background-repeat: no-repeat;
@@ -116,17 +116,27 @@ body {
   margin: 1rem 0;
 }
 
-.add-measure {
+.add-measure,
+.login-page {
   height: 82%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.add-measure .container {
-  width: 100%;
+.container {
+  width: 90%;
   background: white;
   padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h1 {
+  color: #575757;
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--main);
 }
 
 .select-wrapper {
@@ -134,15 +144,15 @@ body {
   flex-direction: row;
 }
 
-.add-measure select,
-.add-measure input,
-.add-measure button {
+select,
+input,
+button {
   height: 3rem;
   font-size: 1.25rem;
   margin: 0.5rem 0.5rem;
 }
 
-.add-measure select {
+select {
   padding: 0.25rem;
   width: 50%;
 }
@@ -152,7 +162,7 @@ body {
   width: 50%;
 }
 
-.add-measure button {
+button {
   color: white;
   background: var(--second);
   width: 95%;

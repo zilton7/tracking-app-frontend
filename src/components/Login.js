@@ -6,14 +6,20 @@ const Login = () => {
 
   const handleClick = () => {
     const username = document.getElementById("username").value;
-    dispatch(login(username));
+    if (username != "") {
+      dispatch(login(username));
+    } else {
+      alert("Username can not be empty");
+    }
   };
 
   return (
     <div className="login-page">
-      login page
-      <input id="username" />
-      <button onClick={handleClick}>Login</button>
+      <div className="container">
+        <h1>Tracking App</h1>
+        <input id="username" placeholder="Enter Your Name" />
+        <button onClick={handleClick}>Login</button>
+      </div>
     </div>
   );
 };
