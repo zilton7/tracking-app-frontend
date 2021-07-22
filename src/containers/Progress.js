@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import ProgressItem from "./ProgressItem";
+import ProgressItem from "../components/ProgressItem";
 
 const sortObjByDate = (array) => {
   // Turn your strings into dates, and then subtract them

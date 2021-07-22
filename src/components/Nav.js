@@ -23,7 +23,7 @@ const Nav = () => {
           <i className="fas fa-chart-line"></i>
           <p>Tracker</p>
         </Link>
-        <Link to="/" className="button-wrapper">
+        <Link to="/progress/1" className="button-wrapper">
           <i className="fas fa-chart-pie"></i>
           <p>Progress</p>
         </Link>
