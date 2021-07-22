@@ -23,7 +23,7 @@ Tracker app is an application designed to track results using back-end API, whic
 - Ruby on Rails for Backend API ([API Repo](https://github.com/zilton7/tracking-app-backend))
 
 ## Live Demo
-[Try it out here](https://lit-mesa-89947.herokuapp.com/)
+[Try it out here](https://tracking-app-zil.herokuapp.com/)
 
 ## Getting Started Locally
 
