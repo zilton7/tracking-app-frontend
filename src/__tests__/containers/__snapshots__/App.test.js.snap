@@ -18,7 +18,9 @@ exports[`Takes website's snapshot 1`] = `
           id="username"
           placeholder="Enter Your Name"
         />
-        <button>
+        <button
+          type="submit"
+        >
           Login
         </button>
       </div>
