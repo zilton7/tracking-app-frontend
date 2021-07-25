@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const MeasurementItem = ({ id, image, name }) => (
   <Link to={`/progress/${id}`} className="measurement-item">
